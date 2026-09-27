@@ -35,6 +35,14 @@ jobs:
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
 
+      - name: Verify SauceDemo credentials
+        shell: bash
+        run: |
+          if [[ -z "$SAUCEDEMO_USERNAME" || -z "$SAUCEDEMO_PASSWORD" ]]; then
+            echo "::error::Configure repository Actions secrets SAUCEDEMO_USERNAME and SAUCEDEMO_PASSWORD."
+            exit 1
+          fi
+
       - name: Run regression suite
         run: npm run test:regression
 
