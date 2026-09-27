@@ -1,0 +1,16 @@
+node_modules/
+.env
+.env.*
+!.env.example
+allure-results/
+allure-report/
+reports/*
+!reports/.gitkeep
+test-results/
+playwright-report/
+screenshots/*
+!screenshots/.gitkeep
+videos/*
+!videos/.gitkeep
+traces/*
+!traces/.gitkeep
