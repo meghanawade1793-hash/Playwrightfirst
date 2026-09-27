@@ -23,7 +23,7 @@ Before(async function ({ pickle }) {
   this.scenarioId = pickle.id;
 });
 
-After(async function ({ pickle, result }) {
+After({ timeout: config.timeout * 3 }, async function ({ pickle, result }) {
   if (!this.context) {
     return;
   }
